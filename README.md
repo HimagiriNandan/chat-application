@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 ###Syncronus Chat Application
 Syncronus is a real-time chat application that allows users to register, set up their profiles, and engage in one-on-one messaging with other users. This README provides an overview of the application's features and includes screenshots to illustrate key functionalities.
 
@@ -80,4 +78,3 @@ Submit a pull request.
 
 
 #########################    THANK YOU FOR VISITING     ###################################
->>>>>>> 18dd219db13691210ecfe1d76d55ab69c992f6cd
