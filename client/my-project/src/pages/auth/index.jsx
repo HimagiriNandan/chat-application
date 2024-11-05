@@ -57,7 +57,6 @@ function Auth() {
       }else{
         toast.error("Create your account before continuing...")
       }
-      console.log(response);
     }
   };
   const handleSignup = async () => {
@@ -67,8 +66,6 @@ function Auth() {
         setUserInfo(response.data.user);
         navigate("/profile");
       }
-      console.log(response);
-
     }
   };
 

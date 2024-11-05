@@ -50,7 +50,6 @@ function CreateChannel() {
           setChannelName("");
           setSelectedContacts([]);
           setNewChannelModal(false);
-          // console.log(res.data.channel);
           addChannel(res.data.channel);
         }
       };

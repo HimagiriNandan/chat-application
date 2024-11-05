@@ -8,11 +8,14 @@ import contactsRoutes from "./routes/ContactRoutes.js";
 import setUpSocket from "./socket.js";
 import messagesRoutes from "./routes/MessageRoutes.js";
 import channelRoutes from "./routes/ChannelRoutes.js";
+import path from "path";
+
 dotenv.config();
 const app = express();
 
 const port = process.env.PORT || 3001;
 const dbUrl = process.env.DATABASE_URL;
+const _dirname = path.resolve();
 
 app.use(cors({
   origin: [process.env.ORIGIN],
@@ -30,6 +33,11 @@ app.use('/api/auth', authRoutes);
 app.use("/api/contacts", contactsRoutes);
 app.use("/api/messages", messagesRoutes);
 app.use("/api/channel", channelRoutes);
+
+app.use(express.static(path.join(_dirname, '/client/my-project/dist')));
+app.get('*', ( req, res) => {
+  res.sendFile(path.resolve(_dirname, 'client', 'my-project', 'dist', 'index.html'));
+})
 
 const server = app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);

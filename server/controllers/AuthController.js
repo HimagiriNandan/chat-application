@@ -30,7 +30,6 @@ export const signup = async (req, res, next)=>{
     });
 
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -66,7 +65,6 @@ export const login = async (req, res, next)=>{
     }});
 
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -74,7 +72,6 @@ export const login = async (req, res, next)=>{
 export const getUserInfo = async (req, res, next)=>{
   try{
     const userData = await User.findById(req.userId);
-    // console.log(userData);
     if(!userData){
       return res.status(404).send("User not found");
     }
@@ -93,7 +90,6 @@ export const getUserInfo = async (req, res, next)=>{
     );
 
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -108,7 +104,6 @@ export const updateProfile = async (req, res, next)=>{
     const userData = await User.findByIdAndUpdate(userId, {
       firstName, lastName, color, profileSetup:true
     }, {new: true, runValidators: true}); // here new means after updating the data it returns new data. And runValidators means if there is any error in the data it returns error.
-    // console.log(userData);
     if(!userData){
       return res.status(404).send("User not found");
     }
@@ -186,7 +181,6 @@ export const removeProfileImage = async (req, res, next)=>{
     return res.status(200).send("Profile Image removed Successfully");
 
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -198,7 +192,6 @@ export const logOut = async (req, res, next)=>{
     return res.status(200).send("Logout Successful.");
 
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };

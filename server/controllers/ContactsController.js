@@ -20,7 +20,6 @@ export const searchContacts = async (req, res, next)=>{
     });
     return res.status(200).json({contacts});
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -81,7 +80,6 @@ export const getContactsForDMList = async (req, res, next)=>{
     
     return res.status(200).json({contacts});
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
@@ -96,7 +94,6 @@ export const getAllContacts = async (req, res, next)=>{
     }))
     return res.status(200).json({contacts});
   }catch(e){
-    console.log({e});
     return res.status(500).send("Internal Server Error");
   }
 };
