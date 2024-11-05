@@ -1,5 +1,7 @@
-import { hash } from "bcryptjs";
+import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
+
+const {hash} = bcrypt;
 
 const userSchema = new mongoose.Schema({
   email:{
