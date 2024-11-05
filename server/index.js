@@ -18,7 +18,7 @@ const dbUrl = process.env.DATABASE_URL;
 const _dirname = path.resolve();
 
 app.use(cors({
-  origin: [process.env.ORIGIN],
+  origin: ["https://syncwave-joxr.onrender.com"],
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   credentials: true
 }));
