@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 const port = process.env.PORT || 3001;
-const dbUrl = process.env.DATABASE_URL;
+const dbUrl = "mongodb+srv://himagirinandan:Nandan2004@chatcluster1.yehfj.mongodb.net/Chat-application";
 const _dirname = path.resolve();
 
 app.use(cors({
