@@ -35,7 +35,7 @@ const WikipediaSearch = () => {
           <IoArrowBack className="text-4xl lg:text-6xl text-white/90 cursor-pointer"/>
         </div>
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-[#eaeaea]">
+          <h1 className="text-2xl font-bold text-[#eaeaea] mb-3">
             Wikipedia Search </h1>
           <img
             className="mx-auto mb-4 w-24"
