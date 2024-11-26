@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { useAppStore } from './store/';
 import { apiClient } from './lib/api-client';
 import { GET_USER_INFO } from './utils/constants';
+import WikipediaSearch from './pages/chat/components/search-container';
 
 const PrivateRoute = ({children}) => {
   const {userInfo} = useAppStore();
@@ -58,6 +59,7 @@ function App() {
         <Route path="/chat" element={<PrivateRoute><Chat /></PrivateRoute>}/>
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}/>
         <Route path="*" element={<Navigate to="/auth" />}/>
+        <Route path="/search" element={<WikipediaSearch />} />
       </Routes>
     </BrowserRouter>
   )
