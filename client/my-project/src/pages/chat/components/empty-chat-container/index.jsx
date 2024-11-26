@@ -18,7 +18,7 @@ const EmptyContainer = () => {
         className="mt-6 px-6 py-2 text-white bg-[#3a3b43] rounded-full hover:bg-[#1c1d25] focus:outline-none cursor-pointer"
         onClick={() => navigate("/search")}
       >
-        <TbWorldSearch /> Wiki Search
+        <TbWorldSearch /> <span className="ml-5">Wikipedia Search</span>
       </Button>
       <div className="text-opacity-80 text-white flex flex-col gap-5 items-center mt-10 lg:text-4xl text-3xl transition-all duration-300 text-center">
         <h3 className="poppins-medium">
