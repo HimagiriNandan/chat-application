@@ -31,7 +31,7 @@ const WikipediaSearch = () => {
   return (
     <div className="min-h-screen bg-[#1b1c24] flex flex-col items-center py-8">
       <div className="bg-[#2a2b33] border border-[#2a2b33] p-6 rounded-lg shadow-md w-full max-w-2xl">
-        <div onClick={navigate("/chat")}>
+        <div onClick={() => navigate("/chat")}>
           <IoArrowBack className="text-4xl lg:text-6xl text-white/90 cursor-pointer"/>
         </div>
         <div className="text-center">
