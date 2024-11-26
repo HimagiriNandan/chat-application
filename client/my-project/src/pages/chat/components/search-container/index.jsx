@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import {IoArrowBack} from "react-icons/io5";
+import { IoArrowBack } from "react-icons/io5";
 const WikipediaSearch = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
