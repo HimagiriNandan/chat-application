@@ -44,27 +44,43 @@ function Auth() {
     }
     return true;
   }
+
+  const validateEmail = (email) => { // added
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (re.test(email)) {
+      return true;
+    } else {
+      toast.error("Invalid email address");
+      return false;
+    }
+  }
+
   const handleLogin = async () => {
-    if(validateLogin()){
-      const response = await apiClient.post(LOGIN_ROUTE, {email, password}, {withCredentials: true});
-      if(response.data.user.id){
-        setUserInfo(response.data.user);
-        if(response.data.user.profileSetup){
-          navigate("/chat");
+    if(validateEmail(email) && password.length){ // validate email
+      if(validateLogin()){
+        const response = await apiClient.post(LOGIN_ROUTE, {email, password}, {withCredentials: true});
+        if(response.data.user.id){
+          setUserInfo(response.data.user);
+          if(response.data.user.profileSetup){
+            navigate("/chat");
+          }else{
+            navigate("/profile");
+          }
         }else{
-          navigate("/profile");
+          toast.error("Create your account before continuing...")
         }
-      }else{
-        toast.error("Create your account before continuing...")
       }
     }
   };
   const handleSignup = async () => {
     if(validateSignup()){
-      const response = await apiClient.post(SIGNUP_ROUTE, {email, password}, {withCredentials: true});
-      if(response.status === 201){
-        setUserInfo(response.data.user);
-        navigate("/profile");
+      let valid = validateEmail(email); //validate email
+      if(valid){
+        const response = await apiClient.post(SIGNUP_ROUTE, {email, password}, {withCredentials: true});
+        if(response.status === 201){
+          setUserInfo(response.data.user);
+          navigate("/profile");
+        }
       }
     }
   };
